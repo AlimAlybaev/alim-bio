@@ -11,7 +11,7 @@ body, html {
     left: 50%;
     width: 100vw;
     height: 100vh;
-    object-fit: contain;  /* изменено на contain */
+    object-fit: cover;
     z-index: -1;
     transform: translate(-50%, -50%);
 }
