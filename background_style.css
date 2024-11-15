@@ -1,0 +1,59 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    position: relative;
+    z-index: 1;
+    color: #800080;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 40%;
+    border-radius: 30px;
+    border: 10px solid #800080;
+    animation: borderAnimation 5s infinite, textColorAnimation 5s infinite;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+@keyframes borderAnimation {
+    0% { border: 4px solid #800080; }
+    10% { border: 4px solid #8A2BE2; }
+    20% { border: 4px solid #9932CC; }
+    30% { border: 4px solid #9400D3; }
+    40% { border: 4px solid #BA55D3; }
+    50% { border: 4px solid #DA70D6; }
+    60% { border: 4px solid #EE82EE; }
+    70% { border: 4px solid #DDA0DD; }
+    80% { border: 4px solid #D8BFD8; }
+    90% { border: 4px solid #C71585; }
+    100% { border: 4px solid #800080; }
+}
+
+@keyframes textColorAnimation {
+    0% { color: #800080; }
+    10% { color: #8A2BE2; }
+    20% { color: #9932CC; }
+    30% { color: #9400D3; }
+    40% { color: #BA55D3; }
+    50% { color: #DA70D6; }
+    60% { color: #EE82EE; }
+    70% { color: #DDA0DD; }
+    80% { color: #D8BFD8; }
+    90% { color: #C71585; }
+    100% { color: #800080; }
+}
