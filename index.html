@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Àssa-bio</title>
+    <title>Alim-bio</title>
     <link rel="stylesheet" href="background_style.css">
     <link rel="stylesheet" href="info_style.css">
     <link rel="stylesheet" href="menu_style.css">
@@ -15,7 +15,7 @@
         <source src="https://envs.sh/5T1.mp4" type="video/mp4">
         Ваш браузер не поддерживает видео.
     </video>
-    <h1>alim info?</h1>
+    <h1>info?</h1>
     <div class="navigation">
         <ul>
             <li class="list active">
@@ -26,14 +26,20 @@
             </li>
             <li class="list">
                 <a href="#">
-                    <span class="icon"><ion-icon name="logo-whatsapp"></ion-icon></span>
-                    <span class="text">WhatsApp</span>
+                    <span class="icon"><ion-icon name="help-circle"></ion-icon></span>
+                    <span class="text">Личные вопросы</span>
                 </a>
             </li>
             <li class="list">
                 <a href="#">
                     <span class="icon"><ion-icon name="logo-github"></ion-icon></span>
                     <span class="text">GitHub</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon"><ion-icon name="game-controller"></ion-icon></span>
+                    <span class="text">Games</span>
                 </a>
             </li>
             <li class="list">
@@ -86,11 +92,20 @@
                     content = '<h2>Welcome to Home!</h2>';
                     infoContainer.classList.remove('show');
                     break;
-                case 'whatsapp':
-                    content = '<h2>WhatsApp:</h2><p><a href="https://wa.me/996706511611" target="_blank">WhatsApp</a></p> — write here with questions. (tap)';
+                case 'личные вопросы':
+                    content = '<h2>Personal Messages:</h2><p><a href="http://t.me/arhess" target="_blank">Писать по любым вопросам на мой телеграм</a></p>';
                     break;
                 case 'github':
-                    content = '<h2>GitHub:</h2><p><a href="https://github.com/AlymAlybaev" target="_blank">GitHub</a></p> (there is a source code website 👀)';
+                    content = '<h2>GitHub:</h2><p><a href="https://github.com/AlymAlybaev" target="_blank">GitHub</a></p> (Исходный код вебсайта можно найти на моём гитхабе 👀)';
+                    break;
+                case 'games':
+                    content = `<h2>Games:</h2>
+                               <p>I play:</p>
+                               <ul>
+                                   <li>Genshin Impact</li>
+                                   <li>Mobile Legends</li>
+                                   <li>Standoff</li>
+                               </ul> the list will be updated. what else shall we play?`;
                     break;
                 case 'bio':
                     content = `<h2>Bio</h2>
@@ -102,6 +117,7 @@
                                    <li>Anime</li>
                                    <li>Volleyball</li>
                                    <li>Programming & coding (soon...)</li>
+                                   <li>Эдиты (пока ещё учусь)</li>
                                </ul>
                                <h3>Learning:</h3>
                                <p>Currently studying programming languages:</p>
