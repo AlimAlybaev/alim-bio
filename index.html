@@ -67,8 +67,8 @@
         }
 
         function setActiveItem(event) {
-            if (this.id === 'muteToggle') {
-                // Игнорируем кнопку звука, чтобы меню не раскрылось
+            if (event.target.closest('#muteToggle')) {
+                // Игнорируем клик по иконке звука
                 return;
             }
             listItems.forEach(item => item.classList.remove('active'));
