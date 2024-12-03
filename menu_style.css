@@ -23,7 +23,7 @@ body.navigation {
 .navigation {
     width: 100px;
     height: auto;
-    background: rgba(255, 255, 255, 0.5); /* Прозрачный белый фон */
+    background: rgba(255, 255, 255, 0.3); /* Прозрачный белый фон */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -125,7 +125,7 @@ body.navigation {
 }
 
 @keyframes backgroundAnimation {
-    0% { background: rgba(255, 255, 255, 0.5); } /* Прозрачный белый */
-    50% { background: rgba(255, 255, 255, 1); } /* Непрозрачный белый */
-    100% { background: rgba(255, 255, 255, 0.5); } /* Прозрачный белый */
+    0% { background: rgba(255, 255, 255, 0.3); } /* Прозрачный белый */
+    50% { background: rgba(255, 255, 255, 0.6); } /* Менее прозрачный белый */
+    100% { background: rgba(255, 255, 255, 0.3); } /* Прозрачный белый */
 }
