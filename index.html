@@ -67,6 +67,9 @@
         }
 
         function setActiveItem(event) {
+            if (this.id === 'muteToggle') {
+                return; // Игнорируем кнопку звука
+            }
             listItems.forEach(item => item.classList.remove('active'));
             this.classList.add('active');
             updateIndicator();
