@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alim-bio</title>
+    <title>Assa-bio</title>
     <link rel="stylesheet" href="background_style.css">
     <link rel="stylesheet" href="info_style.css">
     <link rel="stylesheet" href="menu_style.css">
@@ -11,47 +11,40 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-    <video autoplay muted loop class="video-background">
-        <source src="https://envs.sh/5T1.mp4" type="video/mp4">
-        Ваш браузер не поддерживает видео.
+    <video autoplay muted loop id="backgroundVideo" class="video-background">
+        <source src="https://envs.sh/KHp.mp4" type="video/mp4">
     </video>
-    <h1>info?</h1>
+    <h1>As info?</h1>
     <div class="navigation">
         <ul>
             <li class="list active">
                 <a href="#">
                     <span class="icon"><ion-icon name="home"></ion-icon></span>
-                    <span class="text">Home</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon"><ion-icon name="help-circle"></ion-icon></span>
-                    <span class="text">Личные вопросы</span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon"><ion-icon name="logo-github"></ion-icon></span>
-                    <span class="text">GitHub</span>
                 </a>
             </li>
             <li class="list">
                 <a href="#">
                     <span class="icon"><ion-icon name="game-controller"></ion-icon></span>
-                    <span class="text">Games</span>
                 </a>
             </li>
             <li class="list">
                 <a href="#">
                     <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
-                    <span class="text">Bio</span>
                 </a>
             </li>
             <li class="list">
                 <a href="#">
                     <span class="icon"><ion-icon name="share-social"></ion-icon></span>
-                    <span class="text">Links</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon"><ion-icon name="briefcase"></ion-icon></span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#" id="muteToggle">
+                    <span class="icon"><ion-icon name="volume-high"></ion-icon></span>
                 </a>
             </li>
             <div class="indicator"></div>
@@ -67,6 +60,9 @@
         const indicator = document.querySelector('.indicator');
         const infoContent = document.getElementById('infoContent');
         const infoContainer = document.querySelector('.info-container');
+        const video = document.getElementById('backgroundVideo');
+        const muteToggle = document.getElementById('muteToggle');
+        const volumeIcon = muteToggle.querySelector('ion-icon');
 
         function setIndicator() {
             const activeItem = document.querySelector('.list.active');
@@ -81,51 +77,36 @@
             this.classList.add('active');
             setIndicator();
 
-            const clickedItem = this.querySelector('.text').innerText.toLowerCase();
+            const clickedItem = this.querySelector('.icon ion-icon').getAttribute('name');
             showInfo(clickedItem);
         }
 
-        function showInfo(menuItem) {
+        function showInfo(iconName) {
             let content = '';
-            switch (menuItem) {
+            switch (iconName) {
                 case 'home':
                     content = '<h2>Welcome to Home!</h2>';
                     infoContainer.classList.remove('show');
                     break;
-                case 'личные вопросы':
-                    content = '<h2>Personal Messages:</h2><p><a href="http://t.me/arhess" target="_blank">Писать по любым вопросам на мой телеграм</a></p>';
-                    break;
-                case 'github':
-                    content = '<h2>GitHub:</h2><p><a href="https://github.com/AlymAlybaev" target="_blank">GitHub</a></p> (Исходный код вебсайта можно найти на моём гитхабе 👀)';
-                    break;
-                case 'games':
+                case 'game-controller':
                     content = `<h2>Games:</h2>
                                <p>I play:</p>
                                <ul>
                                    <li>Genshin Impact</li>
                                    <li>Mobile Legends</li>
-                                   <li>Standoff</li>
-                               </ul> the list will be updated. what else shall we play?`;
+                               </ul> what else shall we play?)`;
                     break;
-                case 'bio':
+                case 'person-circle':
                     content = `<h2>Bio</h2>
-                               <p>Name: Alybaev Alim</p>
-                               <p>Birthdate: 30.06.2008 (16 y.o)</p>
-                               <p>Country & City: Kyrgyzstan, Osh</p>
+                               <p>Name: Àssa</p>
+                               <p>Gender: Male</p>
+                               <p>Birthdate: 30 June.</p>
+                               <p>Age: 16 y.o</p>
                                <h3>Hobbies:</h3>
                                <ul>
-                                   <li>Anime</li>
+                                   <li>Watching anime</li>
                                    <li>Volleyball</li>
                                    <li>Programming & coding (soon...)</li>
-                                   <li>Edits (learning to make edits)</li>
-                               </ul>
-                               <h3>Learning:</h3>
-                               <p>Currently studying programming languages:</p>
-                               <ul>
-                                   <li>Python</li>
-                                   <li>JavaScript</li>
-                                   <li>HTML</li>
-                                   <li>CSS</li>
                                </ul>
                                <h3>Favorite anime:</h3>
                                <ul>
@@ -134,27 +115,49 @@
                                    <li>High School DxD</li>
                                    <li>Jujutsu Kaisen</li>
                                    <li>Chainsaw Man</li>
-                               </ul>`;
+                               </ul>
+                               <p>(The list will be updated...)</p>`;
                     break;
-                case 'links':
+                case 'share-social':
                     content = `<h2>Links to My Social Networks:</h2>
                                <ul>
-                                   <li><a href="https://wa.me/996706511611" target="_blank">WhatsApp</a></li>
-                                   <li><a href="https://github.com/AlymAlybaev" target="_blank">GitHub</a></li>
-                                   <li>My TikTok: <a href="https://www.tiktok.com/@coderai?_t=8rUIUYs706h&_r=1" target="_blank">click</a></li>
-                                   <li>My Instagram: <a href="https://www.instagram.com/alim.o.w/profilecard/?igsh=aW94NjhqOHNpaXRj" target="_blank">click</a></li>
-                                   <li>My Telegram: <a href="http://t.me/arhess" target="_blank">click</a></p></li>
+                                   <li>My Telegram: <a href="http://codermasochist.t.me/">click.</a></li>
+                                   <li>My Telegram second account: <a href="http://arhess.t.me/">click.</a></li>
+                                   <li>My TikTok: <a href="https://www.tiktok.com/@codermasohist?_t=8r5CIcyrqMo&_r=1">click.</a></li>
+                                   <li>My Instagram: <a href="https://www.instagram.com/codermasochist">click.</a></li>
+                                   <li>My discord: <a href="https://discord.gg/6NbuC4Rx">click.</a></li>
+                                   <li>My Telegram channel: <a href="http://t.me/makimalove">click.</a></li>
+                                   <li>Сигны Ассы: <a href="http://t.me/omnisex">click.</a></li>
                                </ul> The list will be updated.`;
                     break;
+                case 'briefcase':
+                    content = `<h2>Communication with me:</h2>
+                               <p>Online: 7:00 - 22:00 (MSK, GMT+3)</p>
+                               <p>You can't write to me because you have spamblock? <a href="http://t.me/Assarobot?start=start">click here</a></p>
+                               <p>Userbot of: Hikka.<br>What is a Hikka userbot? <a href="https://telegra.ph/hikka-08-22">clickable.</a></p>
+                               <p>‼️ Read before you write to me: <a href="https://nometa.xyz">nometa.xyz</a></p>
+                               <p>If you did not receive a response within 24h, you were ignore.</p>`;
+                    break;
             }
-            if (menuItem !== 'home') {
+            if (iconName !== 'home') {
                 infoContent.innerHTML = content;
                 infoContainer.classList.add('show');
             }
         }
 
+        function toggleMute() {
+            video.muted = !video.muted;
+            volumeIcon.name = video.muted ? 'volume-mute' : 'volume-high';
+        }
+
         list.forEach((item) => item.addEventListener('click', activeLink));
         window.addEventListener('load', setIndicator);
+
+        muteToggle.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            toggleMute();
+        });
     </script>
 </body>
 </html>
