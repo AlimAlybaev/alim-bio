@@ -14,7 +14,7 @@
     <video autoplay muted loop id="backgroundVideo" class="video-background">
         <source src="https://envs.sh/KHp.mp4" type="video/mp4">
     </video>
-    <h1>AlimInfo</h1>
+    <h1>Alim</h1>
     <div class="navigation">
         <ul>
             <li class="list active">
@@ -35,11 +35,6 @@
             <li class="list">
                 <a href="#">
                     <span class="icon"><ion-icon name="share-social"></ion-icon></span>
-                </a>
-            </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon"><ion-icon name="briefcase"></ion-icon></span>
                 </a>
             </li>
             <li class="list">
@@ -89,25 +84,27 @@
                     infoContainer.classList.remove('show');
                     break;
                 case 'game-controller':
-                    content = `<h2>Games:</h2>
-                               <p>I play:</p>
+                    content = `<h2>What games do I play:</h2>
                                <ul>
                                    <li>Genshin Impact</li>
-                                   <li>Mobile Legends</li>
-                               </ul> what else shall we play?)`;
+                                   <li>Standoff</li>
+                                   <li>Durak</li>
+                                   <li>Checkers & Chess</li>
+                               </ul>`;
                     break;
                 case 'person-circle':
                     content = `<h2>Bio</h2>
-                               <p>Name: Àssa</p>
-                               <p>Gender: Male</p>
-                               <p>Birthdate: 30 June.</p>
-                               <p>Age: 16 y.o</p>
+                               <p>My full name: Alybaev Alim (××××××)</p>
+                               <p>Gender: Male. he/him.</p>
+                               <p>Birthdate: 30.06.2008 (16 y.o)</p>
+                               <p>Country & City: Kyrgyzstan, Osh</p>
                                <h3>Hobbies:</h3>
                                <ul>
-                                   <li>Watching anime</li>
+                                   <li>Anime</li>
                                    <li>Volleyball</li>
-                                   <li>Programming & coding (soon...)</li>
+                                   <li>Programming (soon...)</li>
                                </ul>
+                               <p>Python developer & web developer 😎.</p>
                                <h3>Favorite anime:</h3>
                                <ul>
                                    <li>Darling in the Franxx</li>
@@ -121,22 +118,13 @@
                 case 'share-social':
                     content = `<h2>Links to My Social Networks:</h2>
                                <ul>
-                                   <li>My Telegram: <a href="http://codermasochist.t.me/">click.</a></li>
-                                   <li>My Telegram second account: <a href="http://arhess.t.me/">click.</a></li>
-                                   <li>My TikTok: <a href="https://www.tiktok.com/@codermasohist?_t=8r5CIcyrqMo&_r=1">click.</a></li>
-                                   <li>My Instagram: <a href="https://www.instagram.com/codermasochist">click.</a></li>
-                                   <li>My discord: <a href="https://discord.gg/6NbuC4Rx">click.</a></li>
-                                   <li>My Telegram channel: <a href="http://t.me/makimalove">click.</a></li>
-                                   <li>Сигны Ассы: <a href="http://t.me/omnisex">click.</a></li>
-                               </ul> The list will be updated.`;
-                    break;
-                case 'briefcase':
-                    content = `<h2>Communication with me:</h2>
-                               <p>Online: 7:00 - 22:00 (MSK, GMT+3)</p>
-                               <p>You can't write to me because you have spamblock? <a href="http://t.me/Assarobot?start=start">click here</a></p>
-                               <p>Userbot of: Hikka.<br>What is a Hikka userbot? <a href="https://telegra.ph/hikka-08-22">clickable.</a></p>
-                               <p>‼️ Read before you write to me: <a href="https://nometa.xyz">nometa.xyz</a></p>
-                               <p>If you did not receive a response within 24h, you were ignore.</p>`;
+                                   <li>My <a href="https://wa.me/996706511611">WhatsApp</a> (click)</li>
+                                   <li>My <a href="https://github.com/AlymAlybaev">GitHub</a> (click)</li>
+                                   <li>My TikTok: <a href="https://www.tiktok.com/@coderai?_t=8rUIUYs706h&_r=1">click</a></li>
+                                   <li>My Instagram: <a href="https://www.instagram.com/alim.o.w/profilecard/?igsh=aW94NjhqOHNpaXRj">click</a></li>
+                                   <li>My Telegram: <a href="http://t.me/solitudic">click</a></li>
+                               </ul>
+                               <p>(The list will be updated...)</p>`;
                     break;
             }
             if (iconName !== 'home') {
