@@ -9,7 +9,7 @@
 
 :root {
     --clr: #ff0000; /* Красный для иконок */
-    --dark-clr: #ffffff; /* Белый для текста меню и фона панели */
+    --dark-clr: #ffffff; /* Белый для текста меню */
 }
 
 body.navigation {
@@ -23,13 +23,14 @@ body.navigation {
 .navigation {
     width: 100px;
     height: auto;
-    background: var(--dark-clr); /* Белый фон для панели меню */
+    background: rgba(255, 255, 255, 0.5); /* Прозрачный белый фон */
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    animation: backgroundAnimation 8s ease infinite; /* Анимация переливающегося фона */
 }
 
 .navigation ul {
@@ -123,8 +124,8 @@ body.navigation {
     box-shadow: -1px -10px 0 0 #000000; /* Черный для стрелки индикатора */
 }
 
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@keyframes backgroundAnimation {
+    0% { background: rgba(255, 255, 255, 0.5); } /* Прозрачный белый */
+    50% { background: rgba(255, 255, 255, 1); } /* Непрозрачный белый */
+    100% { background: rgba(255, 255, 255, 0.5); } /* Прозрачный белый */
 }
