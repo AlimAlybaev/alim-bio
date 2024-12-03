@@ -1,3 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --clr: #f5f5f5; /* Светло-серый, почти белый */
+    --red-transparent: rgba(255, 255, 255, 0.3); /* Прозрачный белый */
+}
+
+body.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--clr);
+}
+
+.navigation {
+    width: 100px;
+    height: auto;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.3),  /* Полупрозрачный белый */
+        rgba(255, 255, 255, 0.4),  /* Полупрозрачный белый */
+        rgba(255, 255, 255, 0.5),  /* Полупрозрачный белый */
+        rgba(255, 255, 255, 0.6),  /* Полупрозрачный белый */
+        rgba(255, 255, 255, 0.7),  /* Полупрозрачный белый */
+        rgba(255, 255, 255, 0.8),  /* Полупрозрачный белый */
+        rgba(255, 255, 255, 0.9),  /* Полупрозрачный белый */
+        rgba(255, 255, 255, 0.6),  /* Полупрозрачный белый */
+        rgba(255, 255, 255, 0.5),  /* Полупрозрачный белый */
+        rgba(255, 255, 255, 0.4),  /* Полупрозрачный белый */
+        rgba(255, 255, 255, 0.3)   /* Полупрозрачный белый */
+    );
+    background-size: 400%;
+    animation: gradientAnimation 10s ease infinite;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.navigation ul li a .icon {
+    position: absolute;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--clr);
+    z-index: 2; /* Обеспечиваем, что иконка будет поверх индикатора */
+}
+
+.navigation ul li a .text {
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: 0.62em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+/* Индикатор, который будет двигаться по иконкам */
 .indicator {
     position: absolute;
     top: 50%;
@@ -33,4 +136,20 @@
     background: transparent;
     border-top-left-radius: 20px;
     box-shadow: -1px -10px 0 0 black; /* Черный */
+}
+
+/* Ключевая анимация для перемещения индикатора */
+@keyframes indicatorMove {
+    0% {
+        transform: translate(-50%, -50%) translateX(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateX(100%); /* Перемещаем индикатор по иконкам */
+    }
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
